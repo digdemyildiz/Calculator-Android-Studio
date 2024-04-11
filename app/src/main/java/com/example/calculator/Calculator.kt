@@ -16,9 +16,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.example.calculator.ui.theme.Blue
+import androidx.compose.ui.unit.sp
 import com.example.calculator.ui.theme.Purple
 import com.example.calculator.ui.theme.PurpleLight
+import com.example.calculator.ui.theme.Yellow
 
 @Composable
 fun Calculator(
@@ -35,12 +36,13 @@ fun Calculator(
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ){
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (if (state.operation != null) state.operation.operator else "") + state.number2,
                 textAlign = TextAlign.End,
                 modifier= Modifier
                     .fillMaxWidth()
                     .padding(vertical = 32.dp),
                 fontWeight = FontWeight.Light,
+                fontSize = 40.sp,
                 maxLines = 2
             )
 
@@ -73,7 +75,7 @@ fun Calculator(
                 CalculatorButton(
                     text = "/",
                     modifier = Modifier
-                        .background(Blue)
+                        .background(Yellow)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -122,7 +124,7 @@ fun Calculator(
                 CalculatorButton(
                     text = "x",
                     modifier = Modifier
-                        .background(Blue)
+                        .background(Yellow)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -171,7 +173,7 @@ fun Calculator(
                 CalculatorButton(
                     text = "-",
                     modifier = Modifier
-                        .background(Blue)
+                        .background(Yellow)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -220,7 +222,7 @@ fun Calculator(
                 CalculatorButton(
                     text = "+",
                     modifier = Modifier
-                        .background(Blue)
+                        .background(Yellow)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -258,7 +260,7 @@ fun Calculator(
                 CalculatorButton(
                     text = "=",
                     modifier = Modifier
-                        .background(Blue)
+                        .background(Yellow)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {

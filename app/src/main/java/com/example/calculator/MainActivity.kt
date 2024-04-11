@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.calculator.ui.theme.Blue
+import com.example.calculator.ui.theme.BlueLight
 import com.example.calculator.ui.theme.CalculatorTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,10 +32,9 @@ class MainActivity : ComponentActivity() {
                     buttonSpacing = buttonSpacing,
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Blue)
+                        .background(BlueLight)
                         .padding(16.dp)
                 )
-
             }
         }
     }
